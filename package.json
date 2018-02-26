@@ -15,9 +15,16 @@
     "@progress/kendo-datasource-vue-wrapper": "^2018.1.212",
     "@progress/kendo-dateinputs-vue-wrapper": "^2018.1.212",
     "@progress/kendo-grid-vue-wrapper": "^2018.1.212",
+    "@progress/kendo-layout-vue-wrapper": "^2018.1.212",
     "@progress/kendo-theme-default": "^2.47.7",
+    "@progress/kendo-treelist-vue-wrapper": "^2018.1.221",
+    "@progress/kendo-treeview-vue-wrapper": "^2018.1.221",
     "@progress/kendo-ui": "^2018.1.117",
-    "vue": "^2.5.2"
+    "@progress/kendo-upload-vue-wrapper": "^2018.1.221",
+    "@progress/kendo-validator-vue-wrapper": "^2018.1.221",
+    "bootstrap-vue": "^2.0.0-rc.1",
+    "vue": "^2.5.2",
+    "vue-router": "^3.0.1"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.5",

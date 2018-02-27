@@ -66,7 +66,7 @@
 		                minLength: 3
 		            }
 		        } },
-		            { field: "country", width: "Country", filterable: {
+		            { field: "country", title: "Country", filterable: {
 		            cell: {
 		                enabled: false,
 		                delay: 1500,
@@ -77,7 +77,7 @@
 		                }
 		            }
 		        } },
-		        { field: "status", width: "Status", filterable: {
+		        { field: "status", title: "Status", filterable: {
 		            cell: {
 		                enabled: true,
 		                delay: 1500,

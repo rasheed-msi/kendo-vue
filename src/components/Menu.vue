@@ -7,6 +7,7 @@
 		    <li :class="{'k-state-selected': isForm}">Form</li>
 		    <li :class="{'k-state-selected': isCustom}">Custom</li>
 		    <li :class="{'k-state-selected': isCN}">Case Notes</li>
+		    <li :class="{'k-state-selected': isCL}">Client List</li>
 		    <li :class="{'k-state-selected': isMessage}">Messages</li>
 		</kendo-menu>
 	</div>
@@ -23,6 +24,7 @@
 				isForm: false,
 				isCustom: false,
 				isCN: false,
+				isCL: false,
 				isMessage: false
 			};
 			
@@ -37,7 +39,7 @@
 
 	     		var childObj = jQuery(e.item.firstChild);
 	            var currentItemText = childObj.text().trim();
-	            var slug = currentItemText.toLowerCase();
+	            var slug = currentItemText.replace(/\s+/g, '-').toLowerCase();
 	            this.configureClass(slug)
 	            jQuery(e.item).parent().find(".k-state-selected").removeClass('k-state-selected');
 	            childObj.addClass('k-state-selected');
@@ -46,6 +48,8 @@
 	        configureClass: function (slug){
 				switch(slug){
 					case '/':
+					  this.isGrid = true
+					break
 					case '/grid':
 					  this.isGrid = true
 					break
@@ -55,12 +59,18 @@
 					case '/custom':
 					  this.isCustom = true
 					break
-					case '/case-note':
+					case '/case-notes':
 						this.isCN = true
 					break
-					case '/message':
+					case '/client-list':
+						this.isCL = true
+					break				
+					case '/add-casenote':
+						this.isCL = true
+					break	
+					case '/messages':
 						this.isMessage = true
-					break					
+					break	
 				}
 	        }
 		}

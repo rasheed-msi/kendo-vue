@@ -1,10 +1,13 @@
 <template>
 	<div id="client-list">
 		<h3>{{clientListHeading}}</h3>
-		<kendo-datasource
+        <kendo-datasource
             ref="datasource"
-            :pageSize="15"
-            :transportRead="'/static/api/clientlisting.json'"
+            :page-size="15"
+            :transport-read-url="'/static/api/clientlisting.json'"
+            :transport-read-data-type="'json'"
+            :type="'json'"
+            :batch='true'
             :schema="schema">      
         </kendo-datasource>
         <kendo-grid
@@ -14,10 +17,9 @@
             :sortable='true'
             :selectable='true'
             :editable='true'
-            :pageable-refresh='true'
+            :pageable='true'
             :filterable='filterable'
-            :columns='columns'
-            :pageable-button-count="5">
+            :columns='columns'>
         </kendo-grid>  
 	</div>
 </template>
@@ -33,13 +35,19 @@
 		    return {
 	    	  clientListHeading: "Client List",
 		      schema:{
-		      	data: "data[0]",
+		      	data: 'data',
+		      	total: function(response) {
+			        return response.data.length;
+			    },
 		        model:{
 		            fields: {
-		                //agency_group: { type: "number" },
-		                status: {type: "string"},
+		            	DisplayName: {type: 'string'},
+		            	type_long: {type: 'string'},
 		                last_login: {type: "string"},
-		                datejoined: {type: "string"}
+		                datejoined: {type: 'string'},
+		                status: {type: "string"},
+		                datejoined: {type: "string"},
+		                username: {type: 'string'},
 		            }
 		        }
 		    },

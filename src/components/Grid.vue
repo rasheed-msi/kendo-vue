@@ -15,8 +15,7 @@
             :editable='true'
             :pageable-refresh='true'
             :filterable='filterable'
-            :columns='columns'
-            :pageable-button-count="5">
+            :columns='columns'>
         </kendo-grid>  
 	</div>
 </template>
